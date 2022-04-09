@@ -9,6 +9,10 @@ app.use(cors());
 
 const PORT = process.env.SERVER_PORT || 4500;
 
+app.get("/api/posts", controller.getPosts);
+app.post("/api/posts", controller.createPost);
+app.delete("/api/posts/:id", controller.deletePost);
+
 app.listen(PORT, () => {
-  console.log(`Port running on ${PORT}`);
+  console.log(`Listening on port ${PORT}`);
 });
